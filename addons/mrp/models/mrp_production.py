@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
-
+import itertools
 from collections import defaultdict
 
 from odoo import api, fields, models, _
 from odoo.addons import decimal_precision as dp
 from odoo.exceptions import AccessError, UserError
-from odoo.tools import float_compare, float_round
+from odoo.tools import float_compare, float_round, float_is_zero
 
 class MrpProduction(models.Model):
     """ Manufacturing Orders """
@@ -424,19 +424,26 @@ class MrpProduction(models.Model):
 
     def _generate_raw_moves(self, exploded_lines):
         self.ensure_one()
-        moves = self.env['stock.move']
-        for bom_line, line_data in exploded_lines:
-            moves += self._generate_raw_move(bom_line, line_data)
+        moves = self.env['stock.move'].create([
+            d for d in itertools.starmap(self._get_raw_move_data, exploded_lines)
+            if d
+        ])
         return moves
 
     def _generate_raw_move(self, bom_line, line_data):
+        v = self._get_raw_move_data(bom_line, line_data)
+        if not v:
+            return self.env['stock.move']
+        return self.env['stock.move'].create(v)
+
+    def _get_raw_move_data(self, bom_line, line_data):
         quantity = line_data['qty']
         # alt_op needed for the case when you explode phantom bom and all the lines will be consumed in the operation given by the parent bom line
         alt_op = line_data['parent_line'] and line_data['parent_line'].operation_id.id or False
         if bom_line.child_bom_id and bom_line.child_bom_id.type == 'phantom':
-            return self.env['stock.move']
+            return
         if bom_line.product_id.type not in ['product', 'consu']:
-            return self.env['stock.move']
+            return
         if self.routing_id:
             routing = self.routing_id
         else:
@@ -446,7 +453,7 @@ class MrpProduction(models.Model):
         else:
             source_location = self.location_src_id
         original_quantity = (self.product_qty - self.qty_produced) or 1.0
-        data = {
+        return {
             'sequence': bom_line.sequence,
             'name': self.name,
             'date': self.date_planned_start,
@@ -469,7 +476,6 @@ class MrpProduction(models.Model):
             'propagate': self.propagate,
             'unit_factor': quantity / original_quantity,
         }
-        return self.env['stock.move'].create(data)
 
     @api.multi
     def _adjust_procure_method(self):
@@ -583,6 +589,7 @@ class MrpProduction(models.Model):
             })
             if workorders:
                 workorders[-1].next_work_order_id = workorder.id
+                workorders[-1]._start_nextworkorder()
             workorders += workorder
 
             # assign moves; last operation receive all unassigned moves (which case ?)
@@ -660,6 +667,8 @@ class MrpProduction(models.Model):
             moves_to_do = order.move_raw_ids.filtered(lambda x: x.state not in ('done', 'cancel'))
             for move in moves_to_do.filtered(lambda m: m.product_qty == 0.0 and m.quantity_done > 0):
                 move.product_uom_qty = move.quantity_done
+            for move in moves_to_do.filtered(lambda m: float_is_zero(m.quantity_done, precision_rounding=m.product_uom.rounding)):
+                move._action_cancel()
             moves_to_do._action_done()
             moves_to_do = order.move_raw_ids.filtered(lambda x: x.state == 'done') - moves_not_to_do
             order._cal_price(moves_to_do)
@@ -687,8 +696,10 @@ class MrpProduction(models.Model):
                 raise UserError(_('Work order %s is still running') % wo.name)
         self._check_lots()
         self.post_inventory()
-        moves_to_cancel = (self.move_raw_ids | self.move_finished_ids).filtered(lambda x: x.state not in ('done', 'cancel'))
-        moves_to_cancel._action_cancel()
+        # Moves without quantity done are not posted => set them as done instead of canceling. In
+        # case the user edits the MO later on and sets some consumed quantity on those, we do not
+        # want the move lines to be canceled.
+        (self.move_raw_ids | self.move_finished_ids).filtered(lambda x: x.state not in ('done', 'cancel')).write({'state': 'done'})
         self.write({'state': 'done', 'date_finished': fields.Datetime.now()})
         return self.write({'state': 'done'})
 

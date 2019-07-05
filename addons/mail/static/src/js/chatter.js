@@ -81,6 +81,7 @@ var Chatter = Widget.extend({
             var nodeOptions = fieldsInfo[mailFields.mail_thread].options || {};
             this.hasLogButton = options.display_log_button || nodeOptions.display_log_button;
             this.postRefresh = nodeOptions.post_refresh || 'never';
+            this.reloadOnUploadAttachment = this.postRefresh === 'always';
         }
     },
     /**
@@ -90,6 +91,7 @@ var Chatter = Widget.extend({
         this._$topbar = this.$('.o_chatter_topbar');
         if(!this._disableAttachmentBox) {
             this.$('.o_topbar_right_area').append(QWeb.render('mail.chatter.Attachment.Button', {
+                displayCounter: !!this.fields.thread,
                 count: this.record.data.message_attachment_count || 0,
             }));
         }
@@ -137,7 +139,7 @@ var Chatter = Widget.extend({
         if (this.fields.activity) {
             this.fields.activity.$el.detach();
         }
-        if (this.fields.thread) {
+        if (this.fields.thread && this.fields.thread.$el ) {
             this.fields.thread.$el.detach();
         }
 
@@ -362,7 +364,9 @@ var Chatter = Widget.extend({
         if (this._isAttachmentBoxOpen) {
             this._fetchAttachments().then(this._openAttachmentBox.bind(this));
         }
-        this.trigger_up('reload', { fieldNames: ['message_attachment_count'] });
+        if (this.fields.thread) {
+            this.trigger_up('reload', { fieldNames: ['message_attachment_count'], keepChanges: true });
+        }
     },
     /**
      * @private
@@ -394,7 +398,7 @@ var Chatter = Widget.extend({
                     self.fields.followers.$el.insertBefore(self.$('.o_chatter_button_attachment'));
                 }
             }
-            if (self.fields.thread) {
+            if (self.fields.thread && self.fields.thread.$el) {
                 self.fields.thread.$el.appendTo(self.$el);
             }
         }).always(function () {
@@ -431,7 +435,11 @@ var Chatter = Widget.extend({
      */
      _updateAttachmentCounter: function () {
         var count = this.record.data.message_attachment_count || 0;
-        this.$('.o_chatter_attachment_button_count').html(count);
+        var $element = this.$('.o_chatter_attachment_button_count');
+        if (Number($element.html()) !== count) {
+            this._areAttachmentsLoaded = false;
+            $element.html(count);
+        }
      },
     /**
      * @private
@@ -490,7 +498,9 @@ var Chatter = Widget.extend({
                 })
                 .then(function () {
                     self._reloadAttachmentBox();
-                    self.fields.thread.removeAttachments([ev.data.attachmentId]);
+                    if (self.fields.thread) {
+                        self.fields.thread.removeAttachments([ev.data.attachmentId]);
+                    }
                     self.trigger_up('reload');
                 });
             }
@@ -567,6 +577,9 @@ var Chatter = Widget.extend({
      * @private
      */
     _onReloadAttachmentBox: function () {
+        if (this.reloadOnUploadAttachment) {
+            this.trigger_up('reload');
+        }
         this._reloadAttachmentBox();
     },
     /**

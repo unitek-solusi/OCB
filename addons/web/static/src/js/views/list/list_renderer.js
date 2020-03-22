@@ -48,8 +48,9 @@ var ListRenderer = BasicRenderer.extend({
      */
     init: function (parent, state, params) {
         this._super.apply(this, arguments);
-        this.hasHandle = false;
-        this.handleField = 'sequence';
+        // This attribute lets us know if there is a handle widget on a field,
+        // and on which field it is set.
+        this.handleField = null;
         this._processColumns(params.columnInvisibleFields || {});
         this.rowDecorations = _.chain(this.arch.attrs)
             .pick(function (value, key) {
@@ -174,7 +175,6 @@ var ListRenderer = BasicRenderer.extend({
      */
     _processColumns: function (columnInvisibleFields) {
         var self = this;
-        self.hasHandle = false;
         self.handleField = null;
         this.columns = _.reject(this.arch.children, function (c) {
             var reject = c.attrs.modifiers.column_invisible;
@@ -582,7 +582,7 @@ var ListRenderer = BasicRenderer.extend({
                     .data('id', record.id)
                     .append($cells);
         if (this.hasSelectors) {
-            $tr.prepend(this._renderSelector('td'));
+            $tr.prepend(this._renderSelector('td', !record.res_id));
         }
         this._setDecorationClasses(record, $tr);
         return $tr;
@@ -602,15 +602,19 @@ var ListRenderer = BasicRenderer.extend({
      * view.  This is rendered as an input inside a div, so we can properly
      * style it.
      *
-     * Note that it takes a tag in argument, because selectores in the header
+     * Note that it takes a tag in argument, because selectors in the header
      * are renderd in a th, and those in the tbody are in a td.
      *
      * @private
-     * @param {any} tag either th or td
+     * @param {string} tag either th or td
+     * @param {boolean} disableInput if true, the input generated will be disabled
      * @returns {jQueryElement}
      */
-    _renderSelector: function (tag) {
+    _renderSelector: function (tag, disableInput) {
         var $content = dom.renderCheckbox();
+        if (disableInput) {
+            $content.find("input[type='checkbox']").prop('disabled', disableInput);
+        }
         return $('<' + tag + ' width="1">')
                     .addClass('o_list_record_selector')
                     .append($content);
@@ -771,7 +775,7 @@ var ListRenderer = BasicRenderer.extend({
      */
     _onToggleSelection: function (event) {
         var checked = $(event.currentTarget).prop('checked') || false;
-        this.$('tbody .o_list_record_selector input').prop('checked', checked);
+        this.$('tbody .o_list_record_selector input:not(":disabled")').prop('checked', checked);
         this._updateSelection();
     },
 });

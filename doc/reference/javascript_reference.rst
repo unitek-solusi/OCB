@@ -1372,8 +1372,10 @@ order.
 
 
 - handle (HandleWidget)
-    This field's job is to be displayed as a *handle* in a list view, and allow
+    This field's job is to be displayed as a *handle* in a list view, and allows
     reordering the various records by drag and dropping lines.
+
+    .. warning:: Having more than one field with a handle widget on the same list is not supported.
 
     - Supported field types: *integer*
 
@@ -1664,9 +1666,9 @@ order.
 Relational fields
 -----------------
 
-.. autoclass:: web.relational_fields.FieldSelection
+.. class:: web.relational_fields.FieldSelection
 
-    Supported field types: *selection*, *many2one*
+    Supported field types: *selection*
 
     .. attribute:: placeholder
 
@@ -1697,7 +1699,7 @@ Relational fields
 - many2one (FieldMany2One)
     Default widget for many2one fields.
 
-    - Supported field types: *selection, many2one*
+    - Supported field types: *many2one*
 
     Attributes:
 

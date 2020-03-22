@@ -6,7 +6,7 @@
 # Sorin Trifu <sorin.trifu@gmail.com>, 2017
 # Martin Trigaux, 2017
 # Iulian Cutui <iulian.cutui@gmail.com>, 2017
-# Cozmin Candea <office@terrabit.ro>, 2018
+# Cozmin Candea <office@terrabit.ro>, 2019
 # Dorin Hongu <dhongu@gmail.com>, 2019
 # 
 msgid ""
@@ -1333,7 +1333,7 @@ msgstr ""
 #: code:addons/point_of_sale/static/src/xml/pos.xml:1357
 #, python-format
 msgid "Download Unpaid Orders"
-msgstr ""
+msgstr "Descărcare comenzi neplătite"
 
 #. module: point_of_sale
 #. openerp-web
@@ -1599,6 +1599,13 @@ msgstr "Grupează după"
 #: model:ir.ui.view,arch_db:point_of_sale.pos_config_view_form
 msgid "Group Journal Items"
 msgstr "Grupați elementele Registrului"
+
+#. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/models.js:135
+#, python-format
+msgid "HTTPS connection to IoT Box failed"
+msgstr ""
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_product_uom_categ_is_pos_groupable
@@ -1975,6 +1982,15 @@ msgstr ""
 #: model:ir.ui.view,arch_db:point_of_sale.view_pos_payment
 msgid "Make Payment"
 msgstr "Faceți plata"
+
+#. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/models.js:137
+#, python-format
+msgid ""
+"Make sure you are using IoT Box v18.12 or higher. Navigate to %s to accept "
+"the certificate of your IoT Box."
+msgstr ""
 
 #. module: point_of_sale
 #: model:ir.model.fields,help:point_of_sale.field_pos_config_available_pricelist_ids
@@ -2853,7 +2869,14 @@ msgstr "Tipăriți"
 #. module: point_of_sale
 #. openerp-web
 #: code:addons/point_of_sale/static/src/xml/pos.xml:716
-#: code:addons/point_of_sale/static/src/xml/pos.xml:1372
+#, python-format
+msgid "Print Invoice"
+msgstr "Tipărește factura"
+
+#. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/xml/pos.xml:719
+#: code:addons/point_of_sale/static/src/xml/pos.xml:1375
 #, python-format
 msgid "Print Receipt"
 msgstr "Tipăriți bon"
@@ -4036,7 +4059,7 @@ msgid ""
 "register the refund."
 msgstr ""
 "Pentru a returna produs(e), este necesar să deschideți o sesiune ce va fi "
-"utilizată pentru a înregistra rambursarea. "
+"utilizată pentru a înregistra returul. "
 
 #. module: point_of_sale
 #: model:ir.ui.view,arch_db:point_of_sale.view_pos_session_search

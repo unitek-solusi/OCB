@@ -370,7 +370,7 @@ class AdjustmentLines(models.Model):
                 debit_line = dict(base_line,
                                   name=(self.name + ": " + str(qty_out) + _(' already out')),
                                   quantity=0,
-                                  account_id=credit_account_id)
+                                  account_id=expense_account_id)
                 credit_line = dict(base_line,
                                    name=(self.name + ": " + str(qty_out) + _(' already out')),
                                    quantity=0,

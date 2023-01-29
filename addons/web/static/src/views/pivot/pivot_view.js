@@ -131,7 +131,7 @@ export class PivotView extends Component {
 
         // retrieve form and list view ids from the action
         const { views = [] } = this.env.config;
-        this.views = ["list", "form"].map((viewType) => {
+        this.views = ["list", "pivot", "form"].map((viewType) => {
             const view = views.find((view) => view[1] === viewType);
             return [view ? view[0] : false, viewType];
         });

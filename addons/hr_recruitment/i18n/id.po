@@ -21,7 +21,7 @@
 # whenwesober, 2022
 # Wahyu Setiawan <wahyusetiaaa@gmail.com>, 2022
 # Ryanto The <ry.the77@gmail.com>, 2022
-# Abe Manyo, 2022
+# Abe Manyo, 2023
 # 
 msgid ""
 msgstr ""
@@ -29,7 +29,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-05 10:53+0000\n"
 "PO-Revision-Date: 2021-09-14 12:22+0000\n"
-"Last-Translator: Abe Manyo, 2022\n"
+"Last-Translator: Abe Manyo, 2023\n"
 "Language-Team: Indonesian (https://www.transifex.com/odoo/teams/41243/id/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -483,6 +483,49 @@ msgid ""
 "</table>\n"
 "        "
 msgstr ""
+"<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"590\" style=\"min-width: 590px; background-color: white; padding: 0px 8px 0px 8px; border-collapse:separate;\">\n"
+"    <tr>\n"
+"        <td valign=\"top\">\n"
+"            <div style=\"font-size: 13px; margin: 0px; padding: 0px;\">\n"
+"                Halo,<br/><br/>\n"
+"                Terima kasih untuk keinginan Anda bergabung dengan tim kami di\n"
+"                <b><t t-out=\"object.company_id.name or ''\">YourCompany</t></b>.  Kami\n"
+"                ingin memberitahu Anda, walaupun resume Anda\n"
+"                kompetitif, tim perekrutan kami meninjau lamaran Anda \n"
+"                dan <b>tidak memilih Anda untuk pertimbangan lebih lanjut</b>.\n"
+"                <br/><br/>\n"
+"                Mohon ingat bahwa perekrutan itu susah, dan kami bisa\n"
+"                membuat kesalahan. Jangan sungkan untuk membalas       email ini bila\n"
+"                Anda berpikir kami salah, atau bila Anda ingin informasi\n"
+"                lebih lanjut mengenai keputusan kami.\n"
+"                <br/><br/>\n"
+"                Namun kami akan menyimpan resume Anda agar kami\n"
+"                dapat menghubungi Anda mengenai kesempatan masa\n"
+"                depan yang mungkin lebih cocok untuk ketrampilan dan pengalaman Anda.\n"
+"                <br/><br/>\n"
+"                Kami mengharapkan yang terbaik untuk Anda dalam pelamaran kerja Anda dan berharap kami\n"
+"                akan memiliki kesempatan untuk mempertimbangkan Anda lagi untuk peran lain\n"
+"                di masa depan.\n"
+"                <br/><br/>\n"
+"                Terima kasih,,\n"
+"                <div style=\"font-size: 11px; color: grey;\">\n"
+"                    <t t-if=\"object.user_id\">\n"
+"                        -- <br/>\n"
+"                        <strong t-out=\"object.user_id.name or ''\">Mitchell Admin</strong><br/>\n"
+"                        Email: <t t-out=\"object.user_id.email or ''\">admin@yourcompany.example.com</t><br/>\n"
+"                        Telepon: <t t-out=\"object.user_id.phone or ''\">+1 650-123-4567</t>\n"
+"                    </t>\n"
+"                    <t t-else=\"\">\n"
+"                        -- <br/>\n"
+"                        <t t-out=\"object.company_id.name or ''\">YourCompany</t><br/>\n"
+"                        Tim HR\n"
+"                    </t>\n"
+"                </div>\n"
+"            </div>\n"
+"        </td>\n"
+"    </tr>\n"
+"</table>\n"
+"        "
 
 #. module: hr_recruitment
 #: model:ir.model.fields,help:hr_recruitment.field_hr_job__alias_defaults
@@ -1277,7 +1320,7 @@ msgstr "Wawancara Pertama"
 #. module: hr_recruitment
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_recruitment_stage__fold
 msgid "Folded in Kanban"
-msgstr ""
+msgstr "Sembunyikan di Kanban"
 
 #. module: hr_recruitment
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_applicant__message_follower_ids
@@ -1338,17 +1381,17 @@ msgstr "Hijau"
 #. module: hr_recruitment
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_recruitment_stage__legend_done
 msgid "Green Kanban Label"
-msgstr ""
+msgstr "Label Kanban Hijau"
 
 #. module: hr_recruitment
 #: model:ir.model.fields.selection,name:hr_recruitment.selection__hr_applicant__kanban_state__normal
 msgid "Grey"
-msgstr ""
+msgstr "Abu-Abu"
 
 #. module: hr_recruitment
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_recruitment_stage__legend_normal
 msgid "Grey Kanban Label"
-msgstr ""
+msgstr "Label Kanban Abu-Abu"
 
 #. module: hr_recruitment
 #: model_terms:ir.ui.view,arch_db:hr_recruitment.hr_applicant_view_search
@@ -1364,7 +1407,7 @@ msgstr "Penanggunga Jawab HR"
 #. module: hr_recruitment
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_applicant__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Memiliki Pesan"
 
 #. module: hr_recruitment
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_applicant__date_closed
@@ -1712,7 +1755,7 @@ msgstr ""
 #: code:addons/hr_recruitment/static/src/js/tours/hr_recruitment.js:0
 #, python-format
 msgid "Let’s go back to the dashboard."
-msgstr ""
+msgstr "Mari kembali ke dashboard."
 
 #. module: hr_recruitment
 #: model:hr.recruitment.source,name:hr_recruitment.hr_recruitment_linkedin_ceo
@@ -1723,7 +1766,7 @@ msgstr ""
 #: model:hr.recruitment.source,name:hr_recruitment.hr_recruitment_linkedin_marketing
 #: model:hr.recruitment.source,name:hr_recruitment.hr_recruitment_linkedin_trainee
 msgid "LinkedIn"
-msgstr ""
+msgstr "LinkedIn"
 
 #. module: hr_recruitment
 #: model:ir.model.fields,help:hr_recruitment.field_hr_applicant__email_cc
@@ -1783,7 +1826,7 @@ msgstr ""
 #. module: hr_recruitment
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_applicant__my_activity_date_deadline
 msgid "My Activity Deadline"
-msgstr ""
+msgstr "Deadline Kegiatan Saya"
 
 #. module: hr_recruitment
 #: model_terms:ir.ui.view,arch_db:hr_recruitment.hr_applicant_view_search_bis
@@ -1857,7 +1900,7 @@ msgstr "Aktivitas Berikutnya"
 #. module: hr_recruitment
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_applicant__activity_calendar_event_id
 msgid "Next Activity Calendar Event"
-msgstr ""
+msgstr "Kalender Acara Aktivitas Berikutnya"
 
 #. module: hr_recruitment
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_applicant__activity_date_deadline
@@ -2117,7 +2160,7 @@ msgstr "Publikasikan pekerjaan yang tersedia pada website Anda"
 #: model_terms:ir.ui.view,arch_db:hr_recruitment.hr_applicant_view_search_bis
 #, python-format
 msgid "Ready for Next Stage"
-msgstr ""
+msgstr "Siap untuk Tahap Berikutnya"
 
 #. module: hr_recruitment
 #: model_terms:ir.actions.act_window,help:hr_recruitment.action_hr_job
@@ -2187,7 +2230,7 @@ msgstr "Merah"
 #. module: hr_recruitment
 #: model:ir.model.fields,field_description:hr_recruitment.field_hr_recruitment_stage__legend_blocked
 msgid "Red Kanban Label"
-msgstr ""
+msgstr "Label Kanban Merah"
 
 #. module: hr_recruitment
 #: model_terms:ir.ui.view,arch_db:hr_recruitment.hr_applicant_view_form

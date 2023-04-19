@@ -10,7 +10,8 @@
 # Talal Albahra <talal.albahra@outlook.com>, 2021
 # Hussain Hammad, 2021
 # Mustafa J. Kadhem <safi2266@gmail.com>, 2022
-# Malaz Abuidris <msea@odoo.com>, 2022
+# Niyas Raphy, 2022
+# Malaz Abuidris <msea@odoo.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -18,7 +19,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2022-01-24 09:03+0000\n"
 "PO-Revision-Date: 2021-09-14 12:18+0000\n"
-"Last-Translator: Malaz Abuidris <msea@odoo.com>, 2022\n"
+"Last-Translator: Malaz Abuidris <msea@odoo.com>, 2023\n"
 "Language-Team: Arabic (https://www.transifex.com/odoo/teams/41243/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -717,7 +718,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"        أضف معلومات عندما نقوم ببناء الوصف لعميل مهتم لتضمين\n"
+"        إضافة المعلومات عندما نقوم ببناء الوصف لعميل مهتم لتضمين\n"
 "        الأسئلة والإجابات المرتبطة بالتسجيلات.\n"
 "    "
 
@@ -1722,7 +1723,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"    تطبيق وسيك لتفصيل دليل التوصيل (Complemento XML Carta de Porte)\n"
+"    تطبيق وسيط لتفصيل دليل التوصيل (Complemento XML Carta de Porte)\n"
 "    - البضائع المصدرة (COMEX)\n"
 "    - حقول العناوين التفصيلية\n"
 "    "
@@ -3299,7 +3300,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"إنشاء راعٍ تلقائياً عند استئجار كشك.\n"
+"إنشاء راعي تلقائياً عند استئجار جناح.\n"
 "    "
 
 #. module: base
@@ -4091,7 +4092,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"قم بإنشاء أكشاك لفعاليتك المفضلة.\n"
+"قم بإنشاء أجنحة لفعاليتك المفضلة.\n"
 "    "
 
 #. module: base
@@ -5421,8 +5422,8 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"من العديد من الدول، تُستخدم الإشعارات المدينة لزيادة الكميات لفاتورة موجودة بالفعل\n"
-"or in some specific cases to cancel a credit noteأو في بعض الحالات المحددة لإلغاء إشعار دائن.\n"
+"في العديد من الدول، تُستخدم الإشعارات المدينة لزيادة البالغ لفاتورة موجودة بالفعل\n"
+"أو في بعض الحالات المحددة لإلغاء إشعار دائن.\n"
 "الأمر أشبه بفاتورة عادية، ولكن علينا تتبع الرابط الذي يحتوي على الفاتورة الأصلية.\n"
 "المعالج المُستخدَم شبيه بمعالج الإشعار الدائن.\n"
 "    "
@@ -9177,7 +9178,7 @@ msgid ""
 "    "
 msgstr ""
 "\n"
-"يقوم هذا التطبيق بتنفيذ نظام الالجداول الزمنية.\n"
+"يقوم هذا التطبيق بتنفيذ نظام الجداول الزمنية.\n"
 "==========================================\n"
 "\n"
 "بوسع كل موظف تروميز وتتبع الوقت المقضي في المشاريع المختلفة.\n"
@@ -10758,7 +10759,7 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.report_irmodeloverview
 msgid "<strong>Inherited</strong>"
-msgstr "<strong>وارث</strong>"
+msgstr "<strong>موروث</strong>"
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.report_irmodeloverview
@@ -10874,7 +10875,7 @@ msgstr "<u><strong>الأمان</strong></u>"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.report_irmodeloverview
 msgid "<u><strong>Views</strong></u>"
-msgstr "<u><strong>استعراض</strong></u>"
+msgstr "<u><strong>نوافذ العرض</strong></u>"
 
 #. module: base
 #: model:ir.module.module,description:base.module_l10n_mx_edi_landing
@@ -11575,8 +11576,8 @@ msgid ""
 "Action %(action_reference)s (id: %(action_id)s) does not exist for button of"
 " type action."
 msgstr ""
-"الإجراء %(action_reference)s (المعرّف: %(action_id)s) غير موجود للإجراء من "
-"نوع الزر."
+"الإجراء %(action_reference)s (المعرّف: %(action_id)s) غير موجود للزر من نوع "
+"إجراء. "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_actions_act_url__help
@@ -12597,7 +12598,7 @@ msgstr "إنشاء العملاء المهتمين "
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_appointment
 msgid "Appointments"
-msgstr "التعيينات "
+msgstr "المواعيد  "
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hr_appraisal_skills
@@ -12624,12 +12625,12 @@ msgstr "الموافقات"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_approvals_purchase
 msgid "Approvals - Purchase"
-msgstr "الموافقات - الشراء "
+msgstr "الموافقات - المشتريات "
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_approvals_purchase_stock
 msgid "Approvals - Purchase - Stock"
-msgstr "الموافقات - الشراء - المخزون "
+msgstr "الموافقات - المشتريات - المخزون "
 
 #. module: base
 #: model:ir.actions.act_window,name:base.open_module_tree
@@ -13317,7 +13318,7 @@ msgstr "الكائن الأساسي"
 #: model_terms:ir.ui.view,arch_db:base.view_model_fields_form
 #: model_terms:ir.ui.view,arch_db:base.view_model_form
 msgid "Base Properties"
-msgstr "الخصائص الأساسي "
+msgstr "الخصائص الأساسية "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_view__arch_base
@@ -14196,10 +14197,10 @@ msgid ""
 "a new contact should be created under that new company. You can use the "
 "\"Discard\" button to abandon this change."
 msgstr ""
-"يجب أن يتم تغيير شركة جهة الاتصال فقط إذا لم يتم ضبطه بشكل صحيح منذ البداية."
-" إذا باشرت إحدى جهات الاتصال الموجودة بالعمل لصالح شركة جديدة، سيتوجب حينها "
-"إنشاء جهة اتصال جديدة تحت الشركة الجديدة. بإمكانك استخدام زر \"إهمال\" لطرح "
-"هذا التغيير. "
+"يجب أن يتم تغيير شركة جهة الاتصال فقط إذا لم يتم ضبطها بشكل صحيح منذ "
+"البداية. إذا باشرت إحدى جهات الاتصال الموجودة بالعمل لصالح شركة جديدة، "
+"سيتوجب حينها إنشاء جهة اتصال جديدة تحت الشركة الجديدة. بإمكانك استخدام زر "
+"\"إهمال\" لطرح هذا التغيير. "
 
 #. module: base
 #: code:addons/base/models/ir_model.py:0
@@ -16882,7 +16883,7 @@ msgstr "رقم هوية صاحب العمل (EIN) "
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_hw_escpos
 msgid "ESC/POS Hardware Driver"
-msgstr "ESC/POS Hardware Driver"
+msgstr "جهاز ESC/POS "
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_eu_oss
@@ -17328,7 +17329,7 @@ msgstr ""
 #: code:addons/base/models/ir_ui_menu.py:0
 #, python-format
 msgid "Error! You cannot create recursive menus."
-msgstr "خطأ! لا يمكنك إنشاء قوائم تكرارية."
+msgstr "خطأ! لا يمكنك إنشاء قوائم متداخلة. "
 
 #. module: base
 #: model:res.country,name:base.ee
@@ -20591,9 +20592,8 @@ msgid ""
 "comma-separated list of valid field names (optionally followed by asc/desc "
 "for the direction)"
 msgstr ""
-"Invalid \"order\" specified (%s). A valid \"order\" specification is a "
-"comma-separated list of valid field names (optionally followed by asc/desc "
-"for the direction)"
+"\"الطلب\" المحدد غير صحيح (%s). مواصفات \"الطلب\" الصحيح هي قائمة مفصولة "
+"بفواصل لأسماء حقول صحيحة (يمكن أن تكون متبوعة بتصاعدي/تنازلي للاتجاه) "
 
 #. module: base
 #: code:addons/base/models/res_users.py:0
@@ -20754,12 +20754,12 @@ msgstr "المخزون، اللوجستية، التقييم، المحاسبة"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_currency_rate__inverse_company_rate
 msgid "Inverse Company Rate"
-msgstr ""
+msgstr "سعر الصرف العكسي للشركة "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_currency__inverse_rate
 msgid "Inverse Rate"
-msgstr ""
+msgstr "سعر الصرف العكسي "
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_partner__type
@@ -22559,7 +22559,7 @@ msgstr "دمج جهات الاتصالات التالية"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.base_partner_merge_automatic_wizard_form
 msgid "Merge with Manual Check"
-msgstr "دمج مع اختيار يدوي"
+msgstr "دمج مع الفحص اليدوي "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_logging__message
@@ -22784,7 +22784,7 @@ msgstr "الآنسة"
 #: code:addons/base/models/ir_mail_server.py:0
 #, python-format
 msgid "Missing SMTP Server"
-msgstr "سيرفر SMTP مفقود"
+msgstr "خادم SMTP مفقود "
 
 #. module: base
 #: code:addons/models.py:0
@@ -22802,7 +22802,7 @@ msgstr "قيمة مطلوبة مفقودة للحقل '%s' (%s)"
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Missing view architecture."
-msgstr "Missing view architecture."
+msgstr "بنية واجهة العرض مفقودة "
 
 #. module: base
 #: model:res.partner.title,name:base.res_partner_title_mister
@@ -22850,30 +22850,30 @@ msgstr "الجوال:"
 #: model_terms:ir.ui.view,arch_db:base.view_translation_search
 #: model_terms:ir.ui.view,arch_db:base.view_view_search
 msgid "Model"
-msgstr "الكائن"
+msgstr "النموذج "
 
 #. module: base
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Model %s does not exist"
-msgstr "الكائن %s غير موجود"
+msgstr "النموذج %s غير موجود! "
 
 #. module: base
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Model %s does not exist!"
-msgstr "الكائن %s غير موجود!"
+msgstr "النموذج %s غير موجود! "
 
 #. module: base
 #: code:addons/base/models/ir_model.py:0
 #, python-format
 msgid "Model '%s' contains module data and cannot be removed."
-msgstr "يحتوي هذا الكائن '%s' على بيانات موديول ولا يمكن إزالته."
+msgstr "يحتوي النموذج '%s' على بيانات تطبيق ولا يمكن إزالته. "
 
 #. module: base
 #: model:ir.model,name:base.model_ir_model_access
 msgid "Model Access"
-msgstr "الوصول للكائن"
+msgstr "الوصول للنموذج "
 
 #. module: base
 #: model:ir.model,name:base.model_ir_model_constraint
@@ -22886,13 +22886,13 @@ msgstr "قيود النموذج "
 #: model_terms:ir.ui.view,arch_db:base.view_model_constraint_form
 #: model_terms:ir.ui.view,arch_db:base.view_model_constraint_list
 msgid "Model Constraints"
-msgstr "قيود الكائن"
+msgstr "قيود النموذج "
 
 #. module: base
 #: model:ir.model,name:base.model_ir_model_data
 #: model:ir.model.fields,field_description:base.field_ir_ui_view__model_data_id
 msgid "Model Data"
-msgstr "بيانات الكائن"
+msgstr "بيانات النموذج "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model__name
@@ -22900,12 +22900,12 @@ msgstr "بيانات الكائن"
 #: model_terms:ir.ui.view,arch_db:base.view_model_search
 #: model_terms:ir.ui.view,arch_db:base.view_model_tree
 msgid "Model Description"
-msgstr "وصف الكائن"
+msgstr "وصف النموذج "
 
 #. module: base
 #: model:ir.model.fields.selection,name:base.selection__ir_translation__type__model
 msgid "Model Field"
-msgstr "حقل الكائن"
+msgstr "حقل النموذج "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_actions_report__model
@@ -22914,12 +22914,12 @@ msgstr "حقل الكائن"
 #: model:ir.model.fields,field_description:base.field_ir_model_data__model
 #: model:ir.model.fields,field_description:base.field_ir_model_fields__model
 msgid "Model Name"
-msgstr "اسم الكائن"
+msgstr "اسم النموذج "
 
 #. module: base
 #: model:ir.actions.report,name:base.report_ir_model_overview
 msgid "Model Overview"
-msgstr "مستعرض الكائن"
+msgstr "نظرة عامة على النموذج "
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_actions_server__crud_model_id
@@ -22928,8 +22928,8 @@ msgid ""
 "Model for record creation / update. Set this field only to specify a "
 "different model than the base model."
 msgstr ""
-"الكائن المستخدم في إنشاء أو تحديث السجل. اختر قيمة لهذا الحقل فقط إذا كنت "
-"تريد كائنًا مختلفًا عن الكائن الأساسي."
+"النموذج المستخدم في إنشاء أو تحديث السجل. اختر قيمة لهذا الحقل فقط إذا كنت "
+"تريد نموذجاً مختلفاً عن النموذج الأساسي. "
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_actions_act_window__res_model
@@ -22941,19 +22941,19 @@ msgstr "اسم نموذج الكائن الذي سيتم فتحه في نافذ�
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "Model not found: %(model)s"
-msgstr "لم نعثر على الكائن: %(model)s"
+msgstr "لم يتم العثور على النموذج: %(model)s "
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_actions_server__model_id
 #: model:ir.model.fields,help:base.field_ir_cron__model_id
 msgid "Model on which the server action runs."
-msgstr "الكائن الذي تجرى عليه إجراءات السيرفر."
+msgstr "النموذج الذي تجرى عليه إجراءات الخادم. "
 
 #. module: base
 #: code:addons/model.py:0 code:addons/model.py:0
 #, python-format
 msgid "Model:"
-msgstr "الكائن:"
+msgstr "النموذج: "
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_model_model
@@ -22961,7 +22961,7 @@ msgstr "الكائن:"
 #: model:ir.ui.menu,name:base.ir_model_model_menu
 #: model_terms:ir.ui.view,arch_db:base.view_base_module_uninstall
 msgid "Models"
-msgstr "كائنات"
+msgstr "النماذج "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_view__arch_updated
@@ -22984,24 +22984,24 @@ msgstr "أسلوب البناء المحسّن "
 #: model_terms:ir.ui.view,arch_db:base.view_model_data_search
 #: model_terms:ir.ui.view,arch_db:base.view_module_filter
 msgid "Module"
-msgstr "الموديول"
+msgstr "التطبيق "
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_module_category_form
 #: model_terms:ir.ui.view,arch_db:base.view_module_category_tree
 msgid "Module Category"
-msgstr "فئة الموديول"
+msgstr "فئة التطبيق "
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.module_view_kanban
 msgid "Module Info"
-msgstr "معلومات الموديول"
+msgstr "معلومات التطبيق "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_module__shortdesc
 #: model_terms:ir.ui.view,arch_db:base.module_form
 msgid "Module Name"
-msgstr "اسم الموديول"
+msgstr "اسم التطبيق "
 
 #. module: base
 #: model:ir.model,name:base.model_report_base_report_irmodulereference
@@ -23011,32 +23011,32 @@ msgstr "التقرير المرجعي للتطبيق (الأساس) "
 #. module: base
 #: model:ir.model,name:base.model_base_module_uninstall
 msgid "Module Uninstall"
-msgstr "إزالة الموديول"
+msgstr "إلغاء تثبيث التطبيق "
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_view_base_module_update
 msgid "Module Update"
-msgstr "تحديث الموديول"
+msgstr "تحديث التطبيق "
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_base_module_update
 msgid "Module Update Result"
-msgstr "نتيجة تحديث الموديول"
+msgstr "نتيجة تحديث التطبيق "
 
 #. module: base
 #: model:ir.actions.act_window,name:base.action_view_base_module_upgrade_install
 msgid "Module Upgrade Install"
-msgstr "تثبيت ترقية الموديول"
+msgstr "تثبيت ترقية التطبيق "
 
 #. module: base
 #: model:ir.model,name:base.model_ir_module_module_dependency
 msgid "Module dependency"
-msgstr "اعتماد الموديول على الموديولات الأخرى"
+msgstr "اعتماد التطبيق على التطبيقات الأخرى "
 
 #. module: base
 #: model:ir.model,name:base.model_ir_module_module_exclusion
 msgid "Module exclusion"
-msgstr "استثناء الموديول"
+msgstr "استثناء التطبيق "
 
 #. module: base
 #: code:addons/convert.py:0
@@ -23045,13 +23045,13 @@ msgid ""
 "Module loading %s failed: file %s could not be processed:\n"
 " %s"
 msgstr ""
-"فشل تحميل الموديول %s: تعذّرت معالجة الملف %s:\n"
+"فشل تحميل التطبيق %s: تعذّرت معالجة الملف %s:\n"
 " %s"
 
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_translation__module
 msgid "Module this term belongs to"
-msgstr "الموديول الذي ينتمي إليه هذا الشرط"
+msgstr "التطبيق الذي ينتمي إليه هذا الشرط "
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_base_module_uninstall
@@ -23071,13 +23071,13 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_module_category__module_ids
 msgid "Modules"
-msgstr "الموديولات"
+msgstr "التطبيقات "
 
 #. module: base
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid "Modules \"%s\" and \"%s\" are incompatible."
-msgstr "الموديولان \"%s\" و\"%s\" غير متوافقين."
+msgstr "التطبيقان \"%s\" و\"%s\" غير متوافقان. "
 
 #. module: base
 #: model:res.country,name:base.md
@@ -23187,7 +23187,7 @@ msgstr "تعدد العملات"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_multilang
 msgid "Multi Language Chart of Accounts"
-msgstr "دليل محاسبي متعدد اللغات"
+msgstr "شجرة حسابات متعددة اللغات "
 
 #. module: base
 #: model_terms:res.company,invoice_terms_html:base.main_company
@@ -23208,12 +23208,12 @@ msgstr ""
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_attachment_search
 msgid "My Document(s)"
-msgstr "مستنداتي (s)"
+msgstr "مستنداتي "
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.ir_filters_view_search
 msgid "My filters"
-msgstr "مرشحاتي"
+msgstr "عوامل التصفية الخاصة بي "
 
 #. module: base
 #: model:res.country,name:base.mm
@@ -23424,7 +23424,7 @@ msgstr ""
 #. module: base
 #: model:ir.model.fields,help:base.field_ir_cron__nextcall
 msgid "Next planned execution date for this job."
-msgstr "تاريخ الحدث المقرر لاحقا لهذه الوظيفة."
+msgstr "تاريخ التنفيذ التالي المخطط له لهذه الوظيفة. "
 
 #. module: base
 #: model:res.country,name:base.ni
@@ -23434,7 +23434,7 @@ msgstr "نيكاراجوا"
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.onboarding_container
 msgid "Nice work! Your configuration is done."
-msgstr "أحسنت! انتهت عملية الإعداد."
+msgstr "أحسنت! انتهت عملية التهيئة. "
 
 #. module: base
 #: model_terms:res.partner,website_description:base.res_partner_address_16
@@ -23558,7 +23558,7 @@ msgstr "لم يتم العثور على أي إعداد "
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid "No spaces allowed in view_mode: %r"
-msgstr "No spaces allowed in view_mode: %r"
+msgstr "لا يُسمح بالمسافات في view_mode: %r "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_data__noupdate
@@ -23707,7 +23707,7 @@ msgstr "عدد المكالمات"
 #. module: base
 #: model:ir.model.fields,field_description:base.field_res_users__companies_count
 msgid "Number of Companies"
-msgstr "عدد المؤسسات"
+msgstr "عدد الشركات "
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_users__accesses_count
@@ -23722,12 +23722,12 @@ msgstr "عدد المجموعات التي تنطبق على المستخدم ا
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_module_update__added
 msgid "Number of modules added"
-msgstr "عدد الموديولات المضافة"
+msgstr "عدد التطبيقات المضافة "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_base_module_update__updated
 msgid "Number of modules updated"
-msgstr "عدد الموديولات المحدثة"
+msgstr "عدد التطبيقات المحدثة "
 
 #. module: base
 #: model:ir.model.fields,help:base.field_res_users__rules_count
@@ -23752,7 +23752,7 @@ msgstr "المُصادقة من خلال OAuth2"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_l10n_syscohada
 msgid "OHADA - Accounting"
-msgstr "OHADA - Accounting"
+msgstr "OHADA - المحاسبة "
 
 #. module: base
 #: model_terms:ir.ui.view,arch_db:base.view_window_action_form
@@ -26989,7 +26989,7 @@ msgstr "Path (or glob pattern)"
 #: code:addons/base/models/ir_qweb_fields.py:0
 #, python-format
 msgid "Pattern to format"
-msgstr "Pattern to format"
+msgstr "النمط لتنسيقه "
 
 #. module: base
 #: model:ir.module.module,summary:base.module_hr_payroll_account_sepa
@@ -28141,7 +28141,7 @@ msgstr "الجودة "
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_quality_control_picking_batch
 msgid "Quality - Batch Transfer"
-msgstr ""
+msgstr "الجودة - النقل على دفعات "
 
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_quality
@@ -28442,7 +28442,7 @@ msgstr "قواعد السجلات"
 #. module: base
 #: model:ir.module.module,summary:base.module_timer
 msgid "Record time"
-msgstr "وقت السجل "
+msgstr "تسجيل الوقت "
 
 #. module: base
 #: code:addons/models.py:0 code:addons/models.py:0
@@ -28476,19 +28476,19 @@ msgstr "السير الذاتية ورسائل التوظيف من المستن�
 #: code:addons/models.py:0
 #, python-format
 msgid "Recursion Detected."
-msgstr "Recursion Detected."
+msgstr "تم رصد تداخل. "
 
 #. module: base
 #: code:addons/base/models/ir_module.py:0
 #, python-format
 msgid "Recursion error in modules dependencies !"
-msgstr "خطأ تداخل في متطلبات الوحدات البرمجية!"
+msgstr "خطأ تداخل في متطلبات التطبيقات! "
 
 #. module: base
 #: code:addons/base/models/ir_actions.py:0
 #, python-format
 msgid "Recursion found in child server actions"
-msgstr "Recursion found in child server actions"
+msgstr "تم رصد تداخل في إجراءات الخادم التابع "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_model_data__reference
@@ -30612,7 +30612,7 @@ msgstr "دعم المسارات الحية: البث، المشاركة، يوت
 #. module: base
 #: model:ir.module.module,summary:base.module_quality_control_picking_batch
 msgid "Support of quality control into batch transfers"
-msgstr ""
+msgstr "دعم التحكم في الجودة في النقل على دفعات "
 
 #. module: base
 #: model:res.country,name:base.sr
@@ -31210,7 +31210,7 @@ msgstr "يجب أن يكون رمز العملة فريداً! "
 #: model:ir.model.fields,help:base.field_res_currency_rate__company_rate
 #: model:ir.model.fields,help:base.field_res_currency_rate__inverse_company_rate
 msgid "The currency of rate 1 to the rate of the currency."
-msgstr ""
+msgstr "عملة السعر 1 بالنسبة لسعر العملة."
 
 #. module: base
 #: model:ir.model.constraint,message:base.constraint_res_currency_rate_currency_rate_check
@@ -33487,7 +33487,7 @@ msgstr ""
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "View '%(name)s' is private"
-msgstr "View '%(name)s' is private"
+msgstr "عرض '%(name)s' خاص "
 
 #. module: base
 #: model:ir.model.fields,field_description:base.field_ir_ui_view__arch
@@ -33609,7 +33609,7 @@ msgstr "Wallis and Futuna"
 #. module: base
 #: model:ir.module.module,shortdesc:base.module_stock_picking_batch
 msgid "Warehouse Management: Batch Transfer"
-msgstr ""
+msgstr "إدارة المستودع: النقل على دفعات "
 
 #. module: base
 #: code:addons/base/models/ir_mail_server.py:0
@@ -34184,7 +34184,7 @@ msgstr "يمكنك أن ترفع ملفًا من جهازك أو تنسخ وتل
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid "You can not create recursive tags."
-msgstr "لا يمكنك إنشاء علامات تصنيف تكرارية. "
+msgstr "لا يمكنك إنشاء علامات تصنيف متداخلة. "
 
 #. module: base
 #: model:ir.model.constraint,message:base.constraint_res_users_login_key
@@ -34197,7 +34197,7 @@ msgstr "لا يمكن لمستخدمين استخدام نفس بيانات ال
 msgid ""
 "You can not remove API keys unless they're yours or you are a system user"
 msgstr ""
-"لا يمكنك إزالة مفاتيح الواجهة البرمجية للتطبيق إلا إذا كانت تخصل أو إذا كنت "
+"لا يمكنك إزالة مفاتيح الواجهة البرمجية للتطبيق إلا إذا كانت تخصك أو إذا كنت "
 "مستخدماً للنظام "
 
 #. module: base
@@ -34207,8 +34207,8 @@ msgid ""
 "You can not remove the admin user as it is used internally for resources "
 "created by Odoo (updates, module installation, ...)"
 msgstr ""
-"لا يمكنك إزالة المستخدم المدير حيث أنه يُستخدم داخلياً للموارد بواسطة أودو "
-"(التحديثات، تثبيت التطبيقات، ...) "
+"لا يمكنك إزالة المستخدم المدير حيث أنه يُستخدم داخلياً للموارد المنشأة من "
+"قِبَل أودو (التحديثات، تثبيت التطبيقات، ...) "
 
 #. module: base
 #: code:addons/base/models/report_paperformat.py:0
@@ -34259,19 +34259,19 @@ msgstr ""
 #: code:addons/base/models/res_partner.py:0
 #, python-format
 msgid "You cannot create recursive Partner hierarchies."
-msgstr "لا يمكنك إنشاء تسلسلات هرمية متكررة للشركاء."
+msgstr "لا يمكنك إنشاء تسلسلات هرمية متداخلة للشركاء. "
 
 #. module: base
 #: code:addons/base/models/res_company.py:0
 #, python-format
 msgid "You cannot create recursive companies."
-msgstr "لا يمكنك إنشاء شركات تكرارية."
+msgstr "لا يمكنك إنشاء شركات متداخلة. "
 
 #. module: base
 #: code:addons/base/models/ir_ui_view.py:0
 #, python-format
 msgid "You cannot create recursive inherited views."
-msgstr "لا يمكنك إنشاء أدوات عرض موروثة متكررة."
+msgstr "لا يمكنك إنشاء أدوات عرض موروثة متداخلة. "
 
 #. module: base
 #: code:addons/base/models/res_users.py:0

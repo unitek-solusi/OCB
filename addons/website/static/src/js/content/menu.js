@@ -484,7 +484,10 @@ publicWidget.registry.menuDirection = publicWidget.Widget.extend({
      * @override
      */
     start: function () {
-        this.defaultAlignment = this.$el.is('.ml-auto, .ml-auto ~ *') ? 'right' : 'left';
+        const isRTL = !!this.el.closest('#wrapwrap.o_rtl');
+        this.right = isRTL ? 'left' : 'right';
+        this.left = isRTL ? 'right' : 'left';
+        this.defaultAlignment = this.$el.is('.ml-auto, .ml-auto ~ *') ? this.right : this.left;
         return this._super.apply(this, arguments);
     },
 
@@ -502,7 +505,7 @@ publicWidget.registry.menuDirection = publicWidget.Widget.extend({
      * @returns {boolean}
      */
     _checkOpening: function (alignment, liOffset, liWidth, menuWidth, pageWidth) {
-        if (alignment === 'left') {
+        if (alignment === this.left) {
             // Check if ok to open the dropdown to the right (no window overflow)
             return (liOffset + menuWidth <= pageWidth);
         } else {
@@ -530,8 +533,9 @@ publicWidget.registry.menuDirection = publicWidget.Widget.extend({
 
         var alignment = this.defaultAlignment;
         if ($li.nextAll(':visible').length === 0) {
-            // The dropdown is the last menu item, open to the left
-            alignment = 'right';
+            // The dropdown is the last menu item, open to the left side
+            // (right side with rtl languages).
+            alignment = this.right;
         }
 
         // If can't open in the current direction because it would overflow the
@@ -539,7 +543,7 @@ publicWidget.registry.menuDirection = publicWidget.Widget.extend({
         // same, change back the direction.
         for (var i = 0; i < 2; i++) {
             if (!this._checkOpening(alignment, liOffset, liWidth, menuWidth, pageWidth)) {
-                alignment = (alignment === 'left' ? 'right' : 'left');
+                alignment = (alignment === this.left ? this.right : this.left);
             }
         }
 
@@ -595,36 +599,68 @@ publicWidget.registry.hoverableDropdown = animations.Animation.extend({
      * @param {Event} ev
      */
     _onMouseEnter: function (ev) {
-        if (config.device.size_class <= config.device.SIZES.SM) {
+        // The user must click on the dropdown if he is on mobile (no way to
+        // hover) or if the dropdown is the extra menu ('+').
+        if (config.device.size_class <= config.device.SIZES.SM ||
+            ev.currentTarget.classList.contains('o_extra_menu_items')) {
             return;
         }
-
-        const $dropdown = $(ev.currentTarget);
-        $dropdown.addClass('show');
-        $dropdown.find(this.$dropdownToggles).attr('aria-expanded', 'true');
-        $dropdown.find(this.$dropdownMenus).addClass('show');
+        $(ev.currentTarget.querySelector('.dropdown-toggle')).dropdown('show');
     },
     /**
      * @private
      * @param {Event} ev
      */
     _onMouseLeave: function (ev) {
-        if (config.device.size_class <= config.device.SIZES.SM) {
+        if (config.device.size_class <= config.device.SIZES.SM ||
+            ev.currentTarget.classList.contains('o_extra_menu_items')) {
             return;
         }
-
-        const $dropdown = $(ev.currentTarget);
-        $dropdown.removeClass('show');
-        $dropdown.find(this.$dropdownToggles).attr('aria-expanded', 'false');
-        $dropdown.find(this.$dropdownMenus).removeClass('show');
+        $(ev.currentTarget.querySelector('.dropdown-toggle')).dropdown('hide');
     },
 });
 
 publicWidget.registry.HeaderMainCollapse = publicWidget.Widget.extend({
     selector: 'header#top',
+    disabledInEditableMode: false,
     events: {
         'show.bs.collapse #top_menu_collapse': '_onCollapseShow',
         'hidden.bs.collapse #top_menu_collapse': '_onCollapseHidden',
+    },
+
+    /**
+     * @override
+     */
+    start() {
+        // This is a fix in stable to move the language switcher in the navbar
+        // when the "off-canvas" mobile menu is enabled. Without this the
+        // language switcher is inaccessible in the "off-canvas" mobile menu.
+        // TODO: Remove this in master and make the adaptations only in the XML
+        // templates.
+        this.languageSelectorMustBeMoved = false;
+        // If mobile menu is "off-canvas".
+        if (this.$target[0].querySelector('.o_offcanvas_menu_toggler')) {
+            this.navbarEl = this.$target[0].querySelector('#top_menu');
+            this.languageSelectorEl = this.$target[0].querySelectorAll('#top_menu_collapse .js_language_selector');
+            // As there are 2 language selectors in 'template_header_vertical',
+            // we have to do this to be sure to move the last of the 2 (the one
+            // displayed on mobile).
+            this.languageSelectorEl = this.languageSelectorEl[this.languageSelectorEl.length - 1];
+            this.languageSelectorMustBeMoved = this.languageSelectorEl
+                && !this.navbarEl.contains(this.languageSelectorEl);
+            // Specific case with the "hamburger full" header template where
+            // there is the same bug with the call to action.
+            if (this.$target[0].querySelector('.o_header_hamburger_full_toggler')) {
+                const callToActionEl = this.$target[0].querySelector('.oe_structure_solo');
+                if (callToActionEl) {
+                    this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerUnactive();
+                    callToActionEl.classList.add('nav-item');
+                    this.navbarEl.append(callToActionEl);
+                    this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerActive();
+                }
+            }
+        }
+        return this._super(...arguments);
     },
 
     //--------------------------------------------------------------------------
@@ -636,12 +672,24 @@ publicWidget.registry.HeaderMainCollapse = publicWidget.Widget.extend({
      */
     _onCollapseShow() {
         this.el.classList.add('o_top_menu_collapse_shown');
+        if (this.languageSelectorMustBeMoved) {
+            this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerUnactive();
+            this.languageSelectorEl.classList.add('nav-item');
+            this.navbarEl.append(this.languageSelectorEl);
+            this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerActive();
+        }
     },
     /**
      * @private
      */
     _onCollapseHidden() {
         this.el.classList.remove('o_top_menu_collapse_shown');
+        if (this.languageSelectorMustBeMoved) {
+            this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerUnactive();
+            this.languageSelectorEl.classList.remove('nav-item');
+            this.navbarEl.after(this.languageSelectorEl);
+            this.options.wysiwyg && this.options.wysiwyg.odooEditor.observerActive();
+        }
     },
 });
 

@@ -71,12 +71,12 @@ odoo.define("pos_gift_card.GiftCardPopup", function (require) {
       }
 
       if (can_be_sold) {
-        this.env.pos.get_order().add_product(gift, {
+        await this.env.pos.get_order().add_product(gift, {
           price: this.state.amountToSet,
           quantity: 1,
           merge: false,
           generated_gift_card_ids: giftCard ? giftCard.id : false,
-          extras: { price_manually_set: true },
+          extras: { price_automatically_set: true },
         });
       } else {
         await this.showPopup('ErrorPopup', {
@@ -154,11 +154,12 @@ odoo.define("pos_gift_card.GiftCardPopup", function (require) {
       let lineUsed = await this.isGiftCardAlreadyUsed()
       if (lineUsed) currentOrder.remove_orderline(lineUsed);
 
-      currentOrder.add_product(gift, {
+      await currentOrder.add_product(gift, {
         price: this.getPriceToRemove(giftCard),
         quantity: 1,
         merge: false,
         gift_card_id: giftCard.id,
+        extras: { price_automatically_set: true },
       });
 
       this.cancel();

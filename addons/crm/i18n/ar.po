@@ -15,7 +15,7 @@ msgstr ""
 "POT-Creation-Date: 2021-10-05 10:53+0000\n"
 "PO-Revision-Date: 2021-09-14 12:21+0000\n"
 "Last-Translator: Malaz Abuidris <msea@odoo.com>, 2022\n"
-"Language-Team: Arabic (https://www.transifex.com/odoo/teams/41243/ar/)\n"
+"Language-Team: Arabic (https://app.transifex.com/odoo/teams/41243/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -1008,7 +1008,7 @@ msgstr ""
 #: model:ir.model.fields.selection,name:crm.selection__crm_lead__email_state__correct
 #: model:ir.model.fields.selection,name:crm.selection__crm_lead__phone_state__correct
 msgid "Correct"
-msgstr "تصحيح"
+msgstr "صحيح "
 
 #. module: crm
 #: model:ir.model.fields,help:crm.field_crm_lead__message_bounce
@@ -1462,7 +1462,7 @@ msgstr "حقول يمكن استخدامها لاحتساب تصنيف العم�
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_stage__fold
 msgid "Folded in Pipeline"
-msgstr "مطوي في دورة المبيعات"
+msgstr "مطوي في مخطط سير العمل "
 
 #. module: crm
 #: model:mail.activity.type,name:crm.mail_activity_demo_followup_quote
@@ -1752,7 +1752,7 @@ msgstr "متابع"
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_stage__is_won
 msgid "Is Won Stage?"
-msgstr "المرحلة لفوز المبيعات"
+msgstr "Is Won Stage?"
 
 #. module: crm
 #: model:ir.model.fields,field_description:crm.field_crm_lead__is_automated_probability
@@ -3597,7 +3597,7 @@ msgstr "التتبع"
 #. module: crm
 #: model_terms:ir.ui.view,arch_db:crm.crm_activity_report_view_search
 msgid "Trailing 12 months"
-msgstr ""
+msgstr "متأخر لمدة 12 شهراً "
 
 #. module: crm
 #: model_terms:digest.tip,tip_description:crm.digest_tip_crm_0

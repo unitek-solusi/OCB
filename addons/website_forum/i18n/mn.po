@@ -261,7 +261,7 @@ msgstr ""
 #: model_terms:forum.forum,faq:website_forum.forum_help
 #: model_terms:ir.ui.view,arch_db:website_forum.default_faq
 msgid ""
-"<b>Answers should not add or expand questions</b>. Insteadeither edit the "
+"<b>Answers should not add or expand questions</b>. Instead, either edit the "
 "question or add a comment."
 msgstr ""
 
@@ -1894,7 +1894,7 @@ msgstr "Хариулсан"
 #: model:ir.model.fields,field_description:website_forum.field_forum_post__has_message
 #: model:ir.model.fields,field_description:website_forum.field_forum_tag__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Мессежтэй"
 
 #. module: website_forum
 #: model:forum.forum,name:website_forum.forum_help

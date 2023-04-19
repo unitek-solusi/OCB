@@ -12,10 +12,11 @@
 # ZVI BLONDER <ZVIBLONDER@gmail.com>, 2022
 # Martin Trigaux, 2022
 # Ofir Blum <ofir.blum@gmail.com>, 2022
-# Lilach Gilliam <lilach.gilliam@gmail.com>, 2022
 # Yihya Hugirat <hugirat@gmail.com>, 2022
 # Netta Waizer, 2022
 # NoaFarkash, 2022
+# Ha Ketem <haketem@gmail.com>, 2022
+# Lilach Gilliam <lilach.gilliam@gmail.com>, 2022
 # 
 msgid ""
 msgstr ""
@@ -23,8 +24,8 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-10-05 10:55+0000\n"
 "PO-Revision-Date: 2021-09-14 12:24+0000\n"
-"Last-Translator: NoaFarkash, 2022\n"
-"Language-Team: Hebrew (https://www.transifex.com/odoo/teams/41243/he/)\n"
+"Last-Translator: Lilach Gilliam <lilach.gilliam@gmail.com>, 2022\n"
+"Language-Team: Hebrew (https://app.transifex.com/odoo/teams/41243/he/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -36,7 +37,7 @@ msgstr ""
 #: code:addons/portal/static/src/js/portal_sidebar.js:0
 #, python-format
 msgid "%1d days overdue"
-msgstr ""
+msgstr "%1d ימי איחור"
 
 #. module: portal
 #: code:addons/portal/controllers/portal.py:0
@@ -66,7 +67,7 @@ msgstr "<i class=\"fa fa-chevron-right\" role=\"img\" aria-label=\"Next\" title=
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_layout
 msgid "<i class=\"fa fa-pencil mx-1\"/>Edit Security Settings"
-msgstr ""
+msgstr "<i class=\"fa fa-pencil mx-1\"/>עדכון הגדרות אבטחה"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_layout
@@ -76,7 +77,7 @@ msgstr "<i class=\"fa fa-pencil\"/> ערוך"
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_security
 msgid "<i title=\"Documentation\" class=\"fa fa-fw o_button_icon fa-info-circle\"/>"
-msgstr ""
+msgstr "<i title=\"Documentation\" class=\"fa fa-fw o_button_icon fa-info-circle\"/>"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_details
@@ -85,6 +86,9 @@ msgid ""
 " not allowed once document(s) have been issued for your account. <br/>Please"
 " contact us directly for this operation.</small>"
 msgstr ""
+"<small class=\"form-text text-muted\">אי אפשר לשנות שם החברה או מספר ח.פ. "
+"לאחר שמסמכ(ים) הופקו בחשבונך . <br/>נא ליצור עמנו קשר אם באמת ברצונך לבצע "
+"פעולה זו.</small>"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_searchbar
@@ -290,7 +294,7 @@ msgstr "אזהרת גישה"
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_layout
 msgid "Account Security"
-msgstr ""
+msgstr "אבטחת חשבון"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_share_wizard
@@ -370,7 +374,7 @@ msgstr ""
 #: code:addons/portal/static/src/js/portal.js:0
 #, python-format
 msgid "Check failed"
-msgstr ""
+msgstr "בדיקה נכשלה"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_details
@@ -424,7 +428,7 @@ msgstr ""
 #: code:addons/portal/static/src/js/portal.js:0
 #, python-format
 msgid "Confirm Password"
-msgstr ""
+msgstr "אימות סיסמא"
 
 #. module: portal
 #: model:ir.model,name:portal.model_res_partner
@@ -447,7 +451,7 @@ msgstr "אנשי קשר"
 #: code:addons/portal/static/src/js/portal_composer.js:0
 #, python-format
 msgid "Could not save file <strong>%s</strong>"
-msgstr ""
+msgstr "בעיה בשמירת קובץ <strong>%s</strong>"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_details
@@ -480,7 +484,7 @@ msgstr "נוצר ב-"
 msgid ""
 "Currently available to everyone viewing this document, click to restrict to "
 "internal employees."
-msgstr ""
+msgstr "כרגע זמין לכל מי שצופה במסמך זה, לחיצה תגביל גישה לעובדים בלבד."
 
 #. module: portal
 #. openerp-web
@@ -527,7 +531,7 @@ msgstr "פרטים"
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_security
 msgid "Developer API Keys"
-msgstr ""
+msgstr "מפתחות API למפתחים"
 
 #. module: portal
 #. openerp-web
@@ -578,7 +582,7 @@ msgstr "שרשור דוא\"ל"
 #: code:addons/portal/static/src/xml/portal_chatter.xml:0
 #, python-format
 msgid "Employees Only"
-msgstr ""
+msgstr "לעובדים בלבד"
 
 #. module: portal
 #. openerp-web
@@ -597,7 +601,7 @@ msgstr "שכחת סיסמא?"
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.wizard_view
 msgid "Grant Access"
-msgstr ""
+msgstr "הרשאת גישה"
 
 #. module: portal
 #: model:ir.model,name:portal.model_portal_wizard
@@ -682,7 +686,7 @@ msgstr "הודעת הזמנה"
 #. module: portal
 #: model:ir.model.fields,field_description:portal.field_portal_wizard_user__is_internal
 msgid "Is Internal"
-msgstr ""
+msgstr "פנימי"
 
 #. module: portal
 #: model:ir.model.fields,field_description:portal.field_portal_wizard_user__is_portal
@@ -722,7 +726,7 @@ msgstr "עדכון אחרון ב"
 #. module: portal
 #: model:ir.model.fields,field_description:portal.field_portal_wizard_user__login_date
 msgid "Latest Authentication"
-msgstr ""
+msgstr "אימות אחרון"
 
 #. module: portal
 #. openerp-web
@@ -787,7 +791,7 @@ msgstr "מפתח API חדש"
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_security
 msgid "New Password:"
-msgstr ""
+msgstr "סיסמא חדשה:"
 
 #. module: portal
 #. openerp-web
@@ -829,12 +833,12 @@ msgstr "לקוחות"
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_security
 msgid "Password Updated!"
-msgstr ""
+msgstr "הסיסמא עודכנה!"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_security
 msgid "Password:"
-msgstr ""
+msgstr "סיסמא:"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_details
@@ -846,14 +850,14 @@ msgstr "טלפון"
 #: code:addons/portal/static/src/xml/portal_security.xml:0
 #, python-format
 msgid "Please enter your password to confirm you own this account"
-msgstr ""
+msgstr "נא להזין סיסמא כדי שנוודא שהחשבון הזה שלך"
 
 #. module: portal
 #: code:addons/portal/wizard/portal_wizard.py:0
 #: model_terms:ir.ui.view,arch_db:portal.wizard_view
 #, python-format
 msgid "Portal Access Management"
-msgstr ""
+msgstr "הרשאות גישה לפורטל"
 
 #. module: portal
 #: model:ir.model.fields,field_description:portal.field_portal_mixin__access_url
@@ -878,7 +882,7 @@ msgstr "תצורת משתמש פורטל"
 #. module: portal
 #: model:mail.template,name:portal.mail_template_data_portal_welcome
 msgid "Portal: User Invite"
-msgstr ""
+msgstr "פורטל: הזמנת משתמש"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_record_sidebar
@@ -908,7 +912,7 @@ msgstr "פורסם ב %s"
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.wizard_view
 msgid "Re-Invite"
-msgstr ""
+msgstr "להזמין מחדש"
 
 #. module: portal
 #: model:ir.model.fields,field_description:portal.field_portal_share__partner_ids
@@ -933,12 +937,12 @@ msgstr "דגם מסמך קשור"
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.wizard_view
 msgid "Revoke Access"
-msgstr ""
+msgstr "ביטול הרשאת גישה"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_security
 msgid "Scope"
-msgstr ""
+msgstr "תחום"
 
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_searchbar
@@ -955,7 +959,7 @@ msgstr "אבטחה"
 #: code:addons/portal/static/src/js/portal.js:0
 #, python-format
 msgid "Security Control"
-msgstr ""
+msgstr "בקרת אבטחה"
 
 #. module: portal
 #: model:ir.model.fields,field_description:portal.field_portal_mixin__access_token
@@ -1004,7 +1008,7 @@ msgstr "התחבר"
 msgid ""
 "Some fields are required. Please make sure to write a message or attach a "
 "document"
-msgstr ""
+msgstr "חלק מהשדות חייבים למלא. נא לוודא שכתבת הודעה או צירפת קובץ"
 
 #. module: portal
 #: code:addons/portal/controllers/portal.py:0
@@ -1099,13 +1103,13 @@ msgstr "הסיסמה הישנה שהזמנת אינה נכונה, סיסמתך �
 #: code:addons/portal/wizard/portal_wizard.py:0
 #, python-format
 msgid "The partner \"%s\" already has the portal access."
-msgstr ""
+msgstr "לשותף \"%s\" כבר יש הרשאת גישה לפורטל."
 
 #. module: portal
 #: code:addons/portal/wizard/portal_wizard.py:0
 #, python-format
 msgid "The partner \"%s\" has no portal access."
-msgstr ""
+msgstr "לשותף \"%s\" אין גישה לפורטל."
 
 #. module: portal
 #: code:addons/portal/wizard/portal_wizard.py:0
@@ -1144,7 +1148,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:portal.wizard_view
 msgid ""
 "This text is included at the end of the email sent to new portal users."
-msgstr ""
+msgstr "הטקסט יופיע בסוף המייל שיישלח למשתמשים חדשים"
 
 #. module: portal
 #: model:ir.model.fields,help:portal.field_portal_wizard__welcome_message
@@ -1174,7 +1178,7 @@ msgstr "מספר VAT"
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_security
 msgid "Verify New Password:"
-msgstr ""
+msgstr "אימות סיסמא חדשה:"
 
 #. module: portal
 #: model:ir.model,name:portal.model_ir_ui_view
@@ -1313,7 +1317,7 @@ msgstr "אתה חייב להיות"
 #: code:addons/portal/wizard/portal_wizard.py:0
 #, python-format
 msgid "You should first grant the portal access to the partner \"%s\"."
-msgstr ""
+msgstr "עליך קודם לאפשר גישה לפורטל עבור השותפ/ה  \"%s\"."
 
 #. module: portal
 #: model:mail.template,subject:portal.mail_template_data_portal_welcome
@@ -1382,7 +1386,7 @@ msgstr "odoo"
 #. module: portal
 #: model_terms:ir.ui.view,arch_db:portal.portal_my_security
 msgid "password"
-msgstr ""
+msgstr "סיסמא"
 
 #. module: portal
 #: model:ir.model,name:portal.model_res_users_apikeys_description

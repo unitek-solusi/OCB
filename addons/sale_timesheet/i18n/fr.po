@@ -19,7 +19,7 @@ msgstr ""
 "POT-Creation-Date: 2021-10-05 10:54+0000\n"
 "PO-Revision-Date: 2021-09-14 12:26+0000\n"
 "Last-Translator: Jolien De Paepe, 2022\n"
-"Language-Team: French (https://www.transifex.com/odoo/teams/41243/fr/)\n"
+"Language-Team: French (https://app.transifex.com/odoo/teams/41243/fr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
@@ -1299,22 +1299,22 @@ msgstr "Date de début"
 #. module: sale_timesheet
 #: model_terms:ir.ui.view,arch_db:sale_timesheet.project_profitability_report_view_tree
 msgid "Sum of Amount Invoiced"
-msgstr ""
+msgstr "Somme du montant facturé"
 
 #. module: sale_timesheet
 #: model_terms:ir.ui.view,arch_db:sale_timesheet.project_profitability_report_view_tree
 msgid "Sum of Amount to Invoice"
-msgstr ""
+msgstr "Somme du montant à facturer"
 
 #. module: sale_timesheet
 #: model_terms:ir.ui.view,arch_db:sale_timesheet.project_profitability_report_view_tree
 msgid "Sum of Margin"
-msgstr ""
+msgstr "Somme de la marge"
 
 #. module: sale_timesheet
 #: model_terms:ir.ui.view,arch_db:sale_timesheet.project_profitability_report_view_tree
 msgid "Sum of Timesheet Cost"
-msgstr ""
+msgstr "Somme du coût des feuilles de temps"
 
 #. module: sale_timesheet
 #: model:ir.model,name:sale_timesheet.model_project_task

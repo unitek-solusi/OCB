@@ -17,10 +17,10 @@
 # Minj P <pminj322@gmail.com>, 2021
 # tserendavaa tsogtoo <tseegii011929@gmail.com>, 2021
 # Munkhbaatar g <muuguu17@gmail.com>, 2021
-# Baskhuu Lodoikhuu <baskhuujacara@gmail.com>, 2021
 # Batmunkh Ganbat <batmunkh.g@bumanit.mn>, 2021
-# Sanjaajamts Badamjunai <b.sanjaajamtsfc@gmail.com>, 2021
 # Martin Trigaux, 2021
+# Baskhuu Lodoikhuu <baskhuujacara@gmail.com>, 2022
+# Sanjaajamts Badamjunai <b.sanjaajamtsfc@gmail.com>, 2023
 # 
 msgid ""
 msgstr ""
@@ -28,7 +28,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2021-12-10 07:16+0000\n"
 "PO-Revision-Date: 2021-09-14 12:24+0000\n"
-"Last-Translator: Martin Trigaux, 2021\n"
+"Last-Translator: Sanjaajamts Badamjunai <b.sanjaajamtsfc@gmail.com>, 2023\n"
 "Language-Team: Mongolian (https://www.transifex.com/odoo/teams/41243/mn/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -2425,7 +2425,7 @@ msgstr "Бэлэн мөнгөний бүртгэлтэй"
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_session__has_message
 msgid "Has Message"
-msgstr ""
+msgstr "Мессежтэй"
 
 #. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_order__has_refundable_lines
@@ -3171,6 +3171,13 @@ msgid "Maximum Exceeded"
 msgstr ""
 
 #. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/Misc/NumberBuffer.js:0
+#, python-format
+msgid "Maximum value reached"
+msgstr ""
+
+#. module: point_of_sale
 #: model:ir.model.fields,field_description:point_of_sale.field_pos_session__message_has_error
 msgid "Message Delivery error"
 msgstr "Алдаа үүссэн талаарх зурвас"
@@ -3318,6 +3325,7 @@ msgstr "Дараагийн захиалгын жагсаалт"
 #. module: point_of_sale
 #. openerp-web
 #: code:addons/point_of_sale/static/src/js/Chrome.js:0
+#: code:addons/point_of_sale/static/src/js/Screens/ProductScreen/ProductScreen.js:0
 #, python-format
 msgid "No"
 msgstr "Үгүй"
@@ -4092,6 +4100,8 @@ msgid "Picking POS"
 msgstr "ПОС-ын зарлага"
 
 #. module: point_of_sale
+#: code:addons/point_of_sale/models/pos_order.py:0
+#: code:addons/point_of_sale/models/pos_session.py:0
 #: model_terms:ir.ui.view,arch_db:point_of_sale.view_pos_pos_form
 #: model_terms:ir.ui.view,arch_db:point_of_sale.view_pos_session_form
 msgid "Pickings"
@@ -5500,6 +5510,13 @@ msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/ProductScreen/ProductScreen.js:0
+#, python-format
+msgid "Some Serial/Lot Numbers are missing"
+msgstr "Цувралын дугаар сонгох сануулга."
+
+#. module: point_of_sale
+#. openerp-web
 #: code:addons/point_of_sale/static/src/js/Chrome.js:0
 #, python-format
 msgid ""
@@ -5808,6 +5825,15 @@ msgid ""
 "The Point of Sale only supports the \"add a rounding line\" rounding "
 "strategy."
 msgstr "ПОС нь зөвхөн \"бүхэлчлэл бүхий мөр нэмэх\" аргачлалыг ашиглана."
+
+#. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/PaymentScreen/PaymentScreen.js:0
+#, python-format
+msgid ""
+"The amount cannot be higher than the due amount if you don't have a cash "
+"payment method configured."
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -6137,6 +6163,16 @@ msgid ""
 msgstr ""
 "Компани дээр дансны мод тохилууагдаагүй байна. Санхүүгийн тохиргоо цэсээр "
 "орж дансны модыг тохируулна уу."
+
+#. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/PaymentScreen/PaymentScreen.js:0
+#, python-format
+msgid ""
+"There is no cash payment method available in this point of sale to handle the change.\n"
+"\n"
+" Please add a cash payment method in the point of sale configuration."
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -6549,6 +6585,15 @@ msgid "Type of the exception activity on record."
 msgstr "Бичлэг дээрх асуудал бүхий ажилбарын төрөл"
 
 #. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/ReceiptScreen/ReceiptScreen.js:0
+#, python-format
+msgid ""
+"This order is not yet synced to server. Make sure it is synced then try "
+"again."
+msgstr ""
+
+#. module: point_of_sale
 #: code:addons/point_of_sale/models/pos_session.py:0
 #, python-format
 msgid ""
@@ -6735,9 +6780,10 @@ msgstr "Uuid"
 #. module: point_of_sale
 #. openerp-web
 #: code:addons/point_of_sale/static/src/xml/Popups/CashMoveReceipt.xml:0
-#, python-format
-msgid "VAT:"
-msgstr "НӨАТ:"
+#: code:addons/point_of_sale/static/src/js/Screens/ReceiptScreen/ReceiptScreen.js:0
+#, python-format, python-format
+msgid "Unsynced order"
+msgstr ""
 
 #. module: point_of_sale
 #. openerp-web
@@ -6851,7 +6897,9 @@ msgstr "Та демо өгөгдлүүдийг ачааллахыг хүсч б�
 
 #. module: point_of_sale
 #. openerp-web
+#: code:addons/point_of_sale/models/pos_config.py:0
 #: code:addons/point_of_sale/static/src/js/Chrome.js:0
+#: code:addons/point_of_sale/static/src/js/Screens/ProductScreen/ProductScreen.js:0
 #, python-format
 msgid "Yes"
 msgstr "Тийм"
@@ -6872,6 +6920,23 @@ msgstr ""
 #, python-format
 msgid "You are not allowed to change this quantity"
 msgstr "Та тоо хэмжээг өөрчлөх эрхгүй байна"
+
+#. module: point_of_sale
+#. openerp-web
+#: code:addons/point_of_sale/static/src/js/Screens/ProductScreen/ProductScreen.js:0
+#, python-format
+msgid ""
+"You are trying to sell products with serial/lot numbers, but some of them are not set.\n"
+"Would you like to proceed anyway?"
+msgstr ""
+"Та серийн дугаар ашигладаг бүтээгдэхүүн сонгосон байна. Бүтээгдэхүүн бүр дээр сери дугаарыг нь сонгох боломжтой.\n"
+"Энэ нь зөвхөн таньд сануулж байгаа учир битгий санаа зов. ТА ЦААШ ҮРГЭЛЖЛҮҮЛЖ БОЛНО?"
+
+#. module: point_of_sale
+#: code:addons/point_of_sale/models/pos_config.py:0
+#, python-format
+msgid "You can only have one cash payment method."
+msgstr ""
 
 #. module: point_of_sale
 #: code:addons/point_of_sale/models/account_bank_statement.py:0
@@ -7198,3 +7263,17 @@ msgstr ""
 #, python-format
 msgid "were duplicates of existing orders"
 msgstr "байсан захиалгуудаас хуулбарлан үүссэн"
+
+#. module: point_of_sale
+#: code:addons/point_of_sale/models/pos_session.py:0
+#, python-format
+msgid "You don't have the access rights to set the point of sale cash box."
+msgstr ""
+
+#. module: point_of_sale
+#: code:addons/point_of_sale/models/pos_session.py:0
+#, python-format
+msgid ""
+"You don't have the access rights to get the point of sale closing control "
+"data."
+msgstr ""

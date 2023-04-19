@@ -148,7 +148,7 @@ class HolidaysType(models.Model):
         date_from = self._context.get('default_date_from', fields.Datetime.today())
         employee_id = self._context.get('default_employee_id', self._context.get('employee_id', self.env.user.employee_id.id))
         for holiday_type in self:
-            if holiday_type.requires_allocation:
+            if holiday_type.requires_allocation == 'yes':
                 allocation = self.env['hr.leave.allocation'].search([
                     ('holiday_status_id', '=', holiday_type.id),
                     ('employee_id', '=', employee_id),
@@ -318,7 +318,8 @@ class HolidaysType(models.Model):
                                     leave_unit = 'hours'
                                 if holiday_status_id.requires_allocation != 'no':
                                     for available_allocation in sorted_available_allocations:
-                                        if available_allocation.date_to and available_allocation.date_to < leave.date_from.date():
+                                        if (available_allocation.date_to and available_allocation.date_to < leave.date_from.date()) \
+                                            or (available_allocation.date_from > leave.date_to.date()):
                                             continue
                                         virtual_remaining_leaves = (available_allocation.number_of_days if leave_unit == 'days' else available_allocation.number_of_hours_display) - allocations_days_consumed[employee_id][holiday_status_id][available_allocation]['virtual_leaves_taken']
                                         max_leaves = min(virtual_remaining_leaves, leave_duration)
@@ -329,6 +330,8 @@ class HolidaysType(models.Model):
                                     if leave_duration > 0:
                                         # There are not enough allocation for the number of leaves
                                         days_consumed[False]['virtual_remaining_leaves'] -= leave_duration
+                                        # Hack to make sure that a sum of several allocations does not hide an error
+                                        days_consumed['error']['virtual_remaining_leaves'] -= leave_duration
                                 else:
                                     days_consumed[False]['virtual_leaves_taken'] += leave_duration
                                     if leave.state == 'validate':
@@ -347,17 +350,17 @@ class HolidaysType(models.Model):
                 for future_allocation_interval in future_allocation_intervals._items:
                     if future_allocation_interval[0].date() > search_date:
                         continue
+                    employee_quantity_available = future_allocation_interval[2].employee_id._get_work_days_data_batch(
+                        future_allocation_interval[0],
+                        future_allocation_interval[1],
+                        compute_leaves=False,
+                        domain=company_domain)[employee_id]
                     for allocation in future_allocation_interval[2]:
-                        if not allocation.active:
+                        if not allocation.active or allocation.date_from > search_date:
                             continue
                         days_consumed = allocations_days_consumed[employee_id][holiday_status_id][allocation]
                         if future_allocation_interval[1] != fields.datetime.combine(date, time.max) + timedelta(days=5*365):
-                            # Compute the remaining number of days/hours in the allocation only if it has an end date
-                            quantity_available = allocation.employee_id._get_work_days_data_batch(
-                                future_allocation_interval[0],
-                                future_allocation_interval[1],
-                                compute_leaves=False,
-                                domain=company_domain)[employee_id]
+                            quantity_available = employee_quantity_available
                         else:
                             # If no end date to the allocation, consider the number of days remaining as infinite
                             quantity_available = {'days': float('inf'), 'hours': float('inf')}
@@ -401,6 +404,10 @@ class HolidaysType(models.Model):
 
         for employee_id in allocations_days_consumed:
             for holiday_status_id in allocations_days_consumed[employee_id]:
+                if allocations_days_consumed[employee_id][holiday_status_id].get('error'):
+                    for leave_key in leave_keys:
+                        result[employee_id][holiday_status_id if isinstance(holiday_status_id, int) else holiday_status_id.id][leave_key] = allocations_days_consumed[employee_id][holiday_status_id]['error'][leave_key]
+                    continue
                 for allocation in allocations_days_consumed[employee_id][holiday_status_id]:
                     if allocation and allocation.date_to and (allocation.date_to < date or allocation.date_from > date):
                         continue

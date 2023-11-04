@@ -464,6 +464,7 @@ var NumericField = InputField.extend({
         if (this.nodeOptions.step) {
             this.$input.attr({step: this.nodeOptions.step});
         }
+        this.$input.attr({inputmode: "numeric"});
         return result;
     },
 

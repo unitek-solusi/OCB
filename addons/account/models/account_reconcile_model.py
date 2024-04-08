@@ -643,6 +643,7 @@ class AccountReconcileModel(models.Model):
             AND move.state = 'posted'
             AND account.reconcile IS TRUE
             AND aml.reconciled IS FALSE
+            AND aml.statement_line_id is NULL 
         '''
 
         # Add conditions to handle each of the statement lines we want to match
